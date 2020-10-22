@@ -1,34 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="keys">
-      <UniqueIdentifier>{f6898fe2-fc1a-4f51-acb6-16fce6d98769}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="behaviors">
-      <UniqueIdentifier>{d1c78ce1-bd83-4ebb-8e22-1fda6ebb5111}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="key1.cpp">
-      <Filter>keys</Filter>
-    </ClCompile>
-    <ClCompile Include="key2.cpp">
-      <Filter>keys</Filter>
-    </ClCompile>
-    <ClCompile Include="key3.cpp">
-      <Filter>keys</Filter>
-    </ClCompile>
-    <ClCompile Include="behavior1.cpp">
-      <Filter>behaviors</Filter>
-    </ClCompile>
-    <ClCompile Include="behavior2.cpp">
-      <Filter>behaviors</Filter>
-    </ClCompile>
-    <ClCompile Include="behavior3.cpp">
-      <Filter>behaviors</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="behavior3.h" />
+    <ClInclude Include="key1.cpp" />
   </ItemGroup>
 </Project>
