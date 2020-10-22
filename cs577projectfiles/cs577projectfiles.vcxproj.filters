@@ -28,4 +28,7 @@
       <Filter>behaviors</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="behavior3.h" />
+  </ItemGroup>
 </Project>

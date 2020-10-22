@@ -82,6 +82,9 @@
     <ClCompile Include="key2.cpp" />
     <ClCompile Include="key3.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="behavior3.h" />
+  </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
