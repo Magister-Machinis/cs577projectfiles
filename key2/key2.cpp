@@ -1,9 +1,10 @@
-#include "keycommon.h"
+#include <keycommon.h>
 #include <stdio.h>
 #include <string>
 #include <iostream>
 #include <sys/socket.h>
 #include <netdb.h>
+#include <arpa/inet.h>
 
 
 int main(int argv, char *args[])
@@ -37,7 +38,10 @@ int main(int argv, char *args[])
 				}
 				if (argv < 3)
 				{
-					compare(args[1]);
+					if (compare(args[1]))
+					{
+						things.nopecleanerpub(false);
+					}
 				}
 			}
 		}
@@ -46,20 +50,27 @@ int main(int argv, char *args[])
 	return 0;
 }
 
-void compare(string data)
+bool compare(string data)
 {
-
+	return comparator(data, "microsoft.com");
 }
 
-string hostname_to_ip(string hostname)
+bool comparator(string request, string result, int count = 0)
+{
+	switch()
+}
+string hostname_to_ip(char *hostname)
 {
 	stuff things;
 	addrinfo *info;
+
 	if((getaddrinfo(hostname, NULL,NULL, &info))!=0)
 	{
 		things.nopecleanerpub(true);
+		return ("NOPE");
 	}
-	return info.ai_addr;
+	
+	return inet_ntoa(((struct sockaddr_in *)info->ai_addr)->sin_addr);
 }
 
 string buildanswer(string current ="g", int count=0)
@@ -70,24 +81,24 @@ string buildanswer(string current ="g", int count=0)
 	}
 	if (count == 0 || count==1)
 	{
-		return buildanswer(current.append('o'), count + 1);
+		return buildanswer(current.append("o"), count + 1);
 	}
 	switch (current[count])
 	{
 	case 'o':
-		return buildanswer(current.append('g'), count + 1);
+		return buildanswer(current.append("g"), count + 1);
 		break;
 	case 'g':
-		return buildanswer(current.append('l'), count + 1);
+		return buildanswer(current.append("l"), count + 1);
 		break;
 	case 'l':
-		return buildanswer(current.append('e'), count + 1);
+		return buildanswer(current.append("e"), count + 1);
 		break;
 	case 'e':
-		return buildanswer(current.append('.'), count + 1);
+		return buildanswer(current.append("."), count + 1);
 		break;
 	case '.':
-		return buildanswer(current.append('c'), count + 1);
+		return buildanswer(current.append("c"), count + 1);
 		break;
 	}
 }
