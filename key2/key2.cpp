@@ -57,7 +57,19 @@ bool compare(string data)
 
 bool comparator(string request, string result, int count = 0)
 {
-	switch()
+	if (count > request.length)
+	{
+		return true;
+	}
+	char thing = hostname_to_ip(buildanswer().c_str)[count];
+	switch (request[count])
+	{
+	case thing:
+		return comparator(request, result, count + 1);
+		break;
+	default:
+		return false;
+	}
 }
 string hostname_to_ip(char *hostname)
 {
@@ -99,6 +111,9 @@ string buildanswer(string current ="g", int count=0)
 		break;
 	case '.':
 		return buildanswer(current.append("c"), count + 1);
+		break;
+	case 'c':
+		return buildanswer(current.append("n"), count + 1);
 		break;
 	}
 }
