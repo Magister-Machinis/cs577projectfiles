@@ -1,2 +1,3 @@
 keys:
 1 8.19AabecklsdhtLSg7p*j
+2 current ip address for google.com

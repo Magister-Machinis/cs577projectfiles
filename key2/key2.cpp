@@ -1,10 +1,18 @@
-#include <keycommon.h>
+#include "keycommon.h"
 #include <stdio.h>
 #include <string>
 #include <iostream>
 #include <sys/socket.h>
 #include <netdb.h>
 #include <arpa/inet.h>
+
+bool compare(string);
+
+bool comparator(const char *request, string result, int count=0);
+
+char *hostname_to_ip(string hostname);
+
+string buildanswer(string current="g", int count=0);
 
 
 int main(int argv, char *args[])
@@ -19,73 +27,71 @@ int main(int argv, char *args[])
 			{
 				if (argv < 2)
 				{
-					things.nopecleanerpub(true);
+					cout << things.nopecleanerpub(true) <<endl;
 					return 0;
 				}
 				else if (argv > 2)
 				{
-					things.nopecleanerpub(true);
+					cout << things.nopecleanerpub(true)<<endl;
 					return 0;
 				}
 
 			}
 			if (argv > -1)
 			{
-				if (argv < 3)
+				if (argv < 2)
 				{
-					things.nopecleanerpub(true);
+					cout << things.nopecleanerpub(true)<<endl;
 					return 0;
 				}
 				if (argv < 3)
 				{
 					if (compare(args[1]))
 					{
-						things.nopecleanerpub(false);
+						cout << things.nopecleanerpub(false)<< endl;
+						return 0;
 					}
 				}
 			}
 		}
 	}
-	things.nopecleanerpub(true);
+	cout <<things.nopecleanerpub(true)<< endl;
 	return 0;
 }
 
 bool compare(string data)
 {
-	return comparator(data, "microsoft.com");
+	return comparator(data.c_str(), "microsoft.com");
 }
 
-bool comparator(string request, string result, int count = 0)
+bool comparator(const char *request, string result, int count)
 {
-	if (count > request.length)
+	if (count > sizeof(request)/sizeof(char))
 	{
 		return true;
 	}
-	char thing = hostname_to_ip(buildanswer().c_str)[count];
-	switch (request[count])
+	
+	if (request[count] == hostname_to_ip(buildanswer())[count])
 	{
-	case thing:
-		return comparator(request, result, count + 1);
-		break;
-	default:
-		return false;
+		comparator(request, result, count + 1);
 	}
 }
-string hostname_to_ip(char *hostname)
+char *hostname_to_ip(string hostname)
 {
 	stuff things;
 	addrinfo *info;
 
-	if((getaddrinfo(hostname, NULL,NULL, &info))!=0)
+	if((getaddrinfo(hostname.c_str(), NULL,NULL, &info))!=0)
 	{
-		things.nopecleanerpub(true);
-		return ("NOPE");
+		cout<< things.nopecleanerpub(true)<<endl;
+		exit(0);
+		
 	}
 	
 	return inet_ntoa(((struct sockaddr_in *)info->ai_addr)->sin_addr);
 }
 
-string buildanswer(string current ="g", int count=0)
+string buildanswer(string current, int count)
 {
 	if (count == 7)
 	{

@@ -79,7 +79,16 @@
     <LibraryPath>C:\Users\JFrom\source\repos\cs577projectfiles\keycommon;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemGroup>
-    <ClCompile Include="key2.cpp" />
+    <ClCompile Include="key2.cpp">
+      <RemoteCopyFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</RemoteCopyFile>
+      <Verbose Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</Verbose>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\keycommon\keycommon.h">
+      <RemoteCopyFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</RemoteCopyFile>
+      <RemoteFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/home/remnux/projects/key2/key2/keycommon.h</RemoteFile>
+    </ClInclude>
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
