@@ -5,16 +5,10 @@
 #include <sys/socket.h>
 #include <netdb.h>
 #include <arpa/inet.h>
-
 bool compare(string);
-
 bool comparator(const char *request, string result, int count=0);
-
 char *hostname_to_ip(string hostname);
-
 string buildanswer(string current="g", int count=0);
-
-
 int main(int argv, char *args[])
 {
 	string dummy;
@@ -35,7 +29,6 @@ int main(int argv, char *args[])
 					cout << things.nopecleanerpub(true)<<endl;
 					return 0;
 				}
-
 			}
 			if (argv > -1)
 			{
@@ -69,8 +62,7 @@ bool comparator(const char *request, string result, int count)
 	if (count > sizeof(request)/sizeof(char))
 	{
 		return true;
-	}
-	
+	}	
 	if (request[count] == hostname_to_ip(buildanswer())[count])
 	{
 		comparator(request, result, count + 1);
@@ -80,17 +72,13 @@ char *hostname_to_ip(string hostname)
 {
 	stuff things;
 	addrinfo *info;
-
 	if((getaddrinfo(hostname.c_str(), NULL,NULL, &info))!=0)
 	{
 		cout<< things.nopecleanerpub(true)<<endl;
-		exit(0);
-		
-	}
-	
+		exit(0);	
+	}	
 	return inet_ntoa(((struct sockaddr_in *)info->ai_addr)->sin_addr);
 }
-
 string buildanswer(string current, int count)
 {
 	if (count == 7)

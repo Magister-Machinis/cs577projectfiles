@@ -1,12 +1,9 @@
-#pragma once
 #include <stdio.h>
 #include <string>
 #include <iostream>
 #include <algorithm>
 #include <locale>
 #include <functional>
-
-
 using namespace std;
 class stuff
 {
@@ -26,8 +23,7 @@ private:
 	string nopes = "12353445A342346436345634356B252325523345C266546467786768D684466484444E32423421422412F2342554646464G64687468684";
 	string nopecleaner(bool flag)
 	{
-		char charlist[] = { '1','4','e','2','3','4','s','5','6','7','8','9','y' };
-		
+		char charlist[] = { '1','4','e','2','3','4','s','5','6','7','8','9','y' };		
 		string innernopes = this->nopes;
 		for (int p = 0; p <= innernopes.length(); p++)
 		{
@@ -36,13 +32,11 @@ private:
 				std::replace(innernopes.begin(), innernopes.end(), charlist[i], ' ');
 			}
 		}
-
 		if (flag == true)
 			return removespace(totesnopes(innernopes));
 		if (flag == false)
 			return removespace(totesyes(innernopes));
 	}
-
 	string totesnopes(string messages)
 	{
 		char charlist[] = { 'E','F','G' };
@@ -64,7 +58,6 @@ private:
 		}
 		return messages;
 	}
-
 	string totesyes(string messages)
 	{
 		char charlist2[] = { 'E','F','G' };
@@ -96,13 +89,9 @@ public:
 	{
 
 		return nopecleaner(true);
-	}
-	
+	}	
 	string nopecleanerpub(bool flag)
 	{
 		return nopecleaner(flag);
 	}
-
 };
-
-

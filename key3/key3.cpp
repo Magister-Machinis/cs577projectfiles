@@ -4,8 +4,6 @@
 #include <thread>
 #include <sys/statvfs.h>
 #include <sys/sysinfo.h>
-
-
 int nextcheck(char* data[]);
 bool firstcheck(string, unsigned);
 bool secondcheck(string);
@@ -80,12 +78,9 @@ int moremain(int argc, char *argv[])
 	if (argc > 0)
 	{
 		return	moremain(argc-1, argv);
-	}
-	
-	
+	}	
 	return 0;
 }
-
 int nextcheck(char *data[])
 {
 	stuff thing;
@@ -93,7 +88,6 @@ int nextcheck(char *data[])
 	try
 	{
 		data2 = data[1];
-
 	}
 	catch (exception& e)
 	{
@@ -115,15 +109,11 @@ bool firstcheck(string data , unsigned num)
 {
 	return (data[0] == to_string(thread::hardware_concurrency())[0] & secondcheck(data));
 }
-
 bool  secondcheck(string data)
-{
-	
+{	
 	return((data.find(to_string(info.totalram)) != string::npos) & thirdcheck(data));
 }
-
 bool thirdcheck(string data)
-{
-	
+{	
 	return(data.find(to_string(fsinfo.f_frsize * fsinfo.f_blocks)) != string::npos);
 }

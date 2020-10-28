@@ -1,6 +1,5 @@
 #include <string>
 #include "keycommon.h"
-
 class key1stuff
 {
 private:
@@ -41,14 +40,11 @@ private:
 		}
 	}
 	bool checker(string data, char check, int count = 0)
-	{
-		
+	{		
 		if (count == -1)
 		{
 			return true;
 		}
-			
-
 		switch (data[count])
 		{
 		case '*':
@@ -115,5 +111,4 @@ public:
 		else
 			return sizecheck(33, data);
 	}
-
 };
