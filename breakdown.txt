@@ -6,3 +6,5 @@ keys:
 
 behaviors:
 1 describes a randomly named tree of folders of 1-100 depth and 1-100 width at users home directory, doesn't actually create them to spare the user the mess
+2 asks for a string, then give a thumbs up if the string is a url that resolves to an ip address
+3 

@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
+#include <time.h>
 
 
 
@@ -20,6 +21,7 @@ string newfolder();
 int main(int argc, char *argv[])
 {
 	int test[] = { 1, 2 };
+	srand(time(0));
 	start(test);
 
 	return 0;

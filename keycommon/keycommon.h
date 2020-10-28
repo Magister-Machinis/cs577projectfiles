@@ -6,6 +6,7 @@
 #include <locale>
 #include <functional>
 
+
 using namespace std;
 class stuff
 {

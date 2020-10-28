@@ -63,7 +63,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
-    <ConfigurationType>Makefile</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -82,7 +82,24 @@
   <ImportGroup Label="Shared" />
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Users\JFrom\source\repos\cs577projectfiles\keycommon;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\JFrom\source\repos\cs577projectfiles\keycommon;$(IncludePath)</LibraryPath>
+    <SourcePath>C:\Users\JFrom\source\repos\cs577projectfiles\keycommon;$(IncludePath)</SourcePath>
+  </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="behavior2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\keycommon\keycommon.vcxproj">
+      <Project>{8dff83bf-a828-44f8-b33a-f83c60f8602c}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\keycommon\keycommon.h">
+      <RemoteCopyFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</RemoteCopyFile>
+      <RemoteFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/home/remnux/projects/behavior2/behavior2/keycommon.h</RemoteFile>
+    </ClInclude>
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
