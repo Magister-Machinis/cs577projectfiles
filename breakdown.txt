@@ -1,4 +1,8 @@
+all programs are optimized, stripped and packed.
 keys:
-1 8.19AabecklsdhtLSg7p*j
-2 current ip address for google.com
-3 starts with the number of threads the host supports, then must contain the number for the total ram and hdd space on host in either order, can include noise so long as first number is the threads
+1 key is 8.19AabecklsdhtLSg7p*j checked via a recursive switch statement
+2 current ip address for google.com is the key, 
+3 key is a numeric sequence that fulfills the following requirements -starts with the number of threads the host supports, then must contain the number for the total ram and hdd space on host
+
+behaviors:
+1 describes a randomly named tree of folders of 1-100 depth and 1-100 width at users home directory, doesn't actually create them to spare the user the mess
