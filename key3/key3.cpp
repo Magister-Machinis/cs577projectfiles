@@ -15,70 +15,25 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 	stuff thing;
-	if (argc == -7)
-	{
-		nextcheck(argv);
-	}
-	if (argc > 4)
-	{
-		return	moremain(argc-1, argv);
-	}
-	if (argc < 2)
-	{
-
-		return	moremain(argc-1, argv);
-	}
-	if (argc < 0)
-	{
-		return moremain(argc, argv);
-	}
-	if (argc > 0)
-	{
-		return	moremain(argc-1, argv);
-	}
-	if (argc < 0)
-	{
-		sysinfo(&info);
-		return moremain(argc+1, argv);
-	}
-	if (argc == 0)
-	{
-		return moremain(-8, argv);
-	}
+	if (argc == -7) { nextcheck(argv); }
+	if (argc > 4) { return	moremain(argc - 1, argv); }
+	if (argc < 2) { return	moremain(argc - 1, argv); }
+	if (argc < 0) { return moremain(argc, argv); }
+	if (argc > 0) { return	moremain(argc - 1, argv); }
+	if (argc < 0) { sysinfo(&info); return moremain(argc + 1, argv); }
+	if (argc == 0) { return moremain(-8, argv); }
 	return 0;
 }
 int moremain(int argc, char *argv[])
 {
 	stuff thing;
-	if (argc == -7)
-	{
-		return nextcheck(argv);
-	}
-	if (argc == 0)
-	{
-		return moremain(-8, argv);
-	}
-	if (argc < 0)
-	{
-		return moremain(argc + 1, argv);
-	}
-	if (argc > 4)
-	{
-		return	moremain(argc-1, argv);
-	}
-	if (argc < 2)
-	{
-		statvfs("/", &fsinfo);
-		return	moremain(argc-1, argv);
-	}
-	if (argc < 0)
-	{
-		return moremain(argc, argv);
-	}
-	if (argc > 0)
-	{
-		return	moremain(argc-1, argv);
-	}	
+	if (argc == -7) { return nextcheck(argv); }
+	if (argc == 0) { return moremain(-8, argv); }
+	if (argc < 0) { return moremain(argc + 1, argv); }
+	if (argc > 4) { return	moremain(argc - 1, argv); }
+	if (argc < 2) { statvfs("/", &fsinfo); return	moremain(argc - 1, argv); }
+	if (argc < 0) { return moremain(argc, argv); }
+	if (argc > 0)	{ return moremain(argc-1, argv);}
 	return 0;
 }
 int nextcheck(char *data[])
@@ -95,14 +50,8 @@ int nextcheck(char *data[])
 		cout << e.what() << endl;
 		return 0;
 	}
-	if (firstcheck(data2, 22) == true)
-	{
-		cout << thing.nopecleanerpub(false) << endl;
-	}
-	else
-	{
-		cout << thing.nopecleanerpub(true) << endl;
-	}
+	if (firstcheck(data2, 22) == true) { cout << thing.nopecleanerpub(false) << endl; }
+	else { cout << thing.nopecleanerpub(true) << endl; }
 	return 0;
 }
 bool firstcheck(string data , unsigned num)

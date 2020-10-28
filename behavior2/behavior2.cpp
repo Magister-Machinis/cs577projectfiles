@@ -10,14 +10,10 @@ bool check(string name);
 int main()
 {
 	string name;
-	stuff things;
-
-	
+	stuff things;	
 	cout << "Gimme a sign!" << endl;
-	cin >> name;
-	
+	cin >> name;	
 	cout<< things.nopecleanerpub(check(name))<<endl;
-
 	return 0;
 }
 
