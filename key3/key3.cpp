@@ -15,8 +15,10 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 	stuff thing;
+	
 	if (argc == -7) { nextcheck(argv); }
 	if (argc > 4) { return	moremain(argc - 1, argv); }
+	if (argc == 1) { cout << thing.nope() << endl; return 0; }
 	if (argc < 2) { return	moremain(argc - 1, argv); }
 	if (argc < 0) { return moremain(argc, argv); }
 	if (argc > 0) { return	moremain(argc - 1, argv); }

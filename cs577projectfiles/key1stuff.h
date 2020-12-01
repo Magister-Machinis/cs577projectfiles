@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include "keycommon.h"
 class key1stuff
